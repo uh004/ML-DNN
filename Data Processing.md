@@ -61,5 +61,38 @@
 <br>
 
 > **5. 주변 샘플 데이터 살펴보기**
+
+- distances : 주변 데이터의 거리 
+- index : 주변 데이터의 인덱스
+
 >
     distance, index = model.kneighbors([[25,150]])
+<br>
+
+> **6. 표준점수**
+
+- 표준점수 : 각 특성 값이 평균에서 표준편차의 몇 배만큼 떨어져 있는지 나타냄 
+- 가장 널리 사용하는 전처리 방법 중 하나 
+- **mean()** : 평균 계산 
+- **std()** : 표준편차 계산 
+
+>
+    mean = np.mean(train_input,axis=0) 
+    std = np.std(train_input,axis=0)
+
+    train_scaled = (train_input - mean) / std
+
+<br>
+
+> **7. 표준 점수로 변환**
+
+- 브로드캐스팅 : 넘파이 배열 내 모든 원소에 계산 기능 수행 
+
+>
+    train_scaled = (train_input - mean) / std  #훈련 데이터
+    new = ([25,150]-mean)/std  #샘플 데이터 
+<br>
+
+> **Result**
+
+<img src="https://user-images.githubusercontent.com/105197496/211192525-872f3f9d-8462-4e95-8b14-0b8641f8bb37.png" width=320px height=240px> <img src="https://user-images.githubusercontent.com/105197496/211192516-d99d960f-60d2-47fa-8eac-8947b04edf87.png" width=320px height=240px>
