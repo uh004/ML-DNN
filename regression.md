@@ -47,6 +47,8 @@
 
 - 결정계수 : 1 - (타깃-예측)제곱의 합/(타깃-평균)제곱의 합
 
+    - 회귀 문제의 성능 측정 도구 (R의 제곱으로 표현)
+
 >
     from sklearn.neighbors import KNeighborsRegressor as knr 
     model = knr()
@@ -56,7 +58,7 @@
 
 > **5. 평균 절댓값 오차 계산**
 
-- 타깃과 예측값 사이의 오차를 파악 
+- **mean_absolute_error** : 평균 절댓값 오차 계산 
 >
     from sklearn.metrics import mean_absolute_error as mae  
     test_prediction = model.predict(test_input)
